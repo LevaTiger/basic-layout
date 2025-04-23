@@ -58,20 +58,20 @@ div h2{
 
 @media (max-width: 768px) {
     .webshop {
-        flex-direction: column; /* Válts át oszlopos elrendezésre mobilon */
+        flex-direction: column; /*mobilos nézet oszlopra vált*/
     }
 
     .webshop .sidebar {
-        width: 100%; /* A sidebar teljes szélességű legyen */
-        margin-bottom: 1rem; /* Kisebb margó a sidebar alatt */
+        width: 100%; 
+        margin-bottom: 1rem; 
     }
 
     .webshop .product-list {
-        width: 100%; /* A terméklista teljes szélességű legyen */
-        gap: 1rem; /* Kisebb gap a kártyák között */
+        width: 100%; 
+        gap: 1rem;
     }
 
     .product-list {
-        justify-content: center; /* Középre igazítás */
+        justify-content: center; 
     }
 }

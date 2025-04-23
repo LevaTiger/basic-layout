@@ -1,16 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ProductCard from '../../features/productCard/ProductCard';
 import './webshop.css'
+import { JsonContext } from '../defaultLayout/DefaultLayout';
 
 const Webshop =()=>{
 
     const [webshopData, setWebshopData] = useState([]);
 
+    const jsonData = useContext(JsonContext)
 
     useEffect(()=>{
 
         const fetchData= async ()=>{
-            const response = await fetch('/assets/json/csvjson.json')
+            const response = await fetch('/assets/json/kekszek.json')
             const webshopItems = await response.json();
             setWebshopData(webshopItems);
         }
@@ -28,30 +30,30 @@ const Webshop =()=>{
                 </div>
                     <div>
                         <input type="checkbox" id='women-parfumes' />
-                        <label htmlFor="women-parfumes">Női Parfümök</label>
+                        <label htmlFor="women-parfumes">Finom kekszek</label>
 
                     </div>
                     <div>
                         <input type="checkbox" id='men-parfumes' />
-                        <label htmlFor="men-parfumes">Férfi Parfümök</label>
+                        <label htmlFor="men-parfumes">Hagyományos kekszek</label>
 
                     </div>
                     <div>
                         <input type="checkbox" id='unisex-parfumes' />
-                        <label htmlFor="unisex-parfumes">Unisex Parfümök</label>
+                        <label htmlFor="unisex-parfumes">80s évek kekszei</label>
 
                     </div>
                     <div>
                         <input type="checkbox" id='onsale-parfumes' />
-                        <label htmlFor="onsale-parfumes">Akciós Parfümök</label>
+                        <label htmlFor="onsale-parfumes">Future kekszek</label>
 
                     </div>
               
             </div>
             <div className="product-list">
-                {webshopData.map(item => {
+                {webshopData.map((item, index)=> {
                     console.log(item); // Debugging: elemek ellenőrzése
-                    return <ProductCard key={item.Azonosító} product={item} />;
+                    return <ProductCard key={index} product={item} />;
                 })}
             </div>
         </div>

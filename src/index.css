@@ -21,6 +21,8 @@ code {
   width: 100%; /* Szélesség 100% */
   margin: 0 auto; /* Középre igazítás */
   overflow-x: hidden; /* Oldalra görgetés letiltása */
+  background-color: rgb(231, 231, 231);
+  border-radius: 10px;
  
 }
 
